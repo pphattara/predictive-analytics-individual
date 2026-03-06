@@ -1,8 +1,5 @@
 # Problem Statement: adult_census_income
 
-## Iteration
-- iteration_1_module_1
-
 ## Target
 - `income`
 

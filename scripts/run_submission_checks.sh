@@ -59,9 +59,9 @@ archive = out / 'archive' / 'report_exports'
 
 required = [
     root / 'report_final.pdf',
-    archive / 'report_final_iteration4.md',
-    archive / 'report_final_iteration4.pdf',
-    archive / 'report_final_iteration4.docx',
+    archive / 'report_supporting_export.md',
+    archive / 'report_supporting_export.pdf',
+    archive / 'report_supporting_export.docx',
     out / 'submission_manifest.md',
     metrics / 'evaluation_report.json',
     metrics / 'final_solution_bundle.json',
@@ -95,11 +95,11 @@ bundle_required = {
     'positive_class',
     'selection',
     'test_metrics',
-    'iteration_timeline_summary',
-    'iteration_evidence_links',
+    'project_history_summary',
+    'workflow_evidence_links',
     'module2_artifacts',
     'module3_artifacts',
-    'iteration5_robustness_artifacts',
+    'robustness_artifacts',
     'packaging_artifacts',
     'narrative_links',
     'generated_at_note',
@@ -108,12 +108,12 @@ missing_bundle_keys = sorted(bundle_required - set(bundle.keys()))
 if missing_bundle_keys:
     raise SystemExit(f'final_solution_bundle.json missing keys: {missing_bundle_keys}')
 
-timeline_keys = set(bundle.get('iteration_timeline_summary', {}).keys())
-expected_timeline = {'iteration_1', 'iteration_2', 'iteration_3', 'iteration_4', 'final_submission'}
+timeline_keys = set(bundle.get('project_history_summary', {}).keys())
+expected_timeline = {'foundation_build', 'six_step_restructure', 'quality_uplift', 'report_polish', 'final_submission'}
 if timeline_keys != expected_timeline:
     raise SystemExit(f'final_solution_bundle.json timeline mismatch: got {sorted(timeline_keys)}')
 
-report_md_text = (archive / 'report_final_iteration4.md').read_text(encoding='utf-8')
+report_md_text = (archive / 'report_supporting_export.md').read_text(encoding='utf-8')
 if '## 6. References' not in report_md_text:
     raise SystemExit('Archived report markdown missing references section')
 if not re.search(r'Figure\s+\d+', report_md_text):

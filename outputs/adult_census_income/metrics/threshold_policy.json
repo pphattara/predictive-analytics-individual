@@ -1,5 +1,5 @@
 {
-  "module": "iteration_1_module_2",
+  "module": "threshold_selection",
   "dataset": "adult_census_income",
   "selected_source": "candidate",
   "selected_model_family": "tree_hgb_tuned",

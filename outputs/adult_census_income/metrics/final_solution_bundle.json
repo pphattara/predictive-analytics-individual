@@ -4,7 +4,7 @@
   "target": "income",
   "positive_class": ">50K",
   "selection": {
-    "module": "iteration_1_module_2",
+    "module": "model_selection",
     "dataset": "adult_census_income",
     "selected_source": "candidate",
     "selected_model_family": "tree_hgb_tuned",
@@ -27,18 +27,18 @@
     "calibration_error": 0.013923257840017543,
     "brier_score": 0.08896255720747469
   },
-  "iteration_timeline_summary": {
-    "iteration_1": "Modules 1/2/3 completed: framing, EDA, preprocessing, modelling, evaluation, and deep error analysis.",
-    "iteration_2": "Coursework six-step restructuring applied to notebook/report flow.",
-    "iteration_3": "Rubric-uplift pass added leakage/correlation/outlier visuals, tuning, and learning diagnostics.",
-    "iteration_4": "Narrative and reporting polish with figure-numbered argument and stronger reflection.",
+  "project_history_summary": {
+    "foundation_build": "Framing, EDA, preprocessing, modelling, evaluation, and deep error analysis were established and validated.",
+    "six_step_restructure": "Analysis was reorganized to match the coursework brief's six-step structure.",
+    "quality_uplift": "Leakage, correlation, outlier, tuning, and learning-diagnostic evidence were added to close rubric gaps.",
+    "report_polish": "Narrative clarity, numbered figures, and reflection quality were strengthened for submission.",
     "final_submission": "Root submission package assembled with reproducibility checks and final marker-facing artefacts."
   },
-  "iteration_evidence_links": {
+  "workflow_evidence_links": {
     "agent_log": "outputs/adult_census_income/agent_log.md",
-    "iteration2_fit": "outputs/adult_census_income/iteration2_steps_heading_fit.md",
-    "iteration3_fit": "outputs/adult_census_income/iteration3_steps_heading_fit.md",
-    "iteration4_fit": "outputs/adult_census_income/iteration4_steps_heading_fit.md",
+    "coursework_steps_restructure": "outputs/adult_census_income/archive/process_notes/coursework_steps_restructure.md",
+    "rubric_uplift_notes": "outputs/adult_census_income/archive/process_notes/rubric_uplift_notes.md",
+    "report_polish_notes": "outputs/adult_census_income/archive/process_notes/report_polish_notes.md",
     "coursework_brief_alignment": "outputs/adult_census_income/coursework_brief_6_steps_alignment.md"
   },
   "module2_artifacts": {
@@ -58,7 +58,7 @@
     "deployment_risk_md": "outputs/adult_census_income/module3_deployment_risk.md",
     "module3_figures_dir": "outputs/adult_census_income/figures/module3/"
   },
-  "iteration5_robustness_artifacts": {
+  "robustness_artifacts": {
     "repeated_cv_stability_csv": "outputs/adult_census_income/metrics/repeated_cv_stability.csv",
     "mlp_training_curve_csv": "outputs/adult_census_income/metrics/mlp_training_curve.csv",
     "tuning_robustness_summary_json": "outputs/adult_census_income/metrics/tuning_robustness_summary.json",
@@ -69,16 +69,16 @@
   },
   "packaging_artifacts": {
     "report_pdf": "report_final.pdf",
-    "supporting_report_md": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.md",
-    "supporting_report_docx": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.docx",
-    "supporting_report_pdf": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.pdf",
+    "supporting_report_md": "outputs/adult_census_income/archive/report_exports/report_supporting_export.md",
+    "supporting_report_docx": "outputs/adult_census_income/archive/report_exports/report_supporting_export.docx",
+    "supporting_report_pdf": "outputs/adult_census_income/archive/report_exports/report_supporting_export.pdf",
     "submission_manifest": "outputs/adult_census_income/submission_manifest.md",
-    "pre_submission_checklist": "outputs/adult_census_income/pre_submission_checklist_iteration5.md",
+    "pre_submission_checklist": "outputs/adult_census_income/pre_submission_checklist_final.md",
     "agent_log": "outputs/adult_census_income/agent_log.md"
   },
   "narrative_links": {
     "report": "report_final.pdf",
-    "supporting_report_markdown": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.md",
+    "supporting_report_markdown": "outputs/adult_census_income/archive/report_exports/report_supporting_export.md",
     "section_6_4_narrative": "notebooks/adult_census_income_final.ipynb#section-6.4",
     "coursework_section_alignment": "outputs/adult_census_income/coursework_section_alignment.md"
   },

@@ -1,5 +1,5 @@
 {
-  "module": "iteration_1_module_1",
+  "module": "framing_eda_preprocessing",
   "dataset": "adult_census_income",
   "target": "income",
   "no_nan_train": true,

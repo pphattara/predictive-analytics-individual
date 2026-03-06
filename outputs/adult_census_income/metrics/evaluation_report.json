@@ -1,5 +1,5 @@
 {
-  "module": "iteration_1_module_2",
+  "module": "model_selection_and_test_evaluation",
   "dataset": "adult_census_income",
   "target": "income",
   "positive_class": ">50K",
@@ -9,7 +9,7 @@
     "test": 4885
   },
   "selection": {
-    "module": "iteration_1_module_2",
+    "module": "model_selection",
     "dataset": "adult_census_income",
     "selected_source": "candidate",
     "selected_model_family": "tree_hgb_tuned",

@@ -6,14 +6,14 @@
 - Canonical submission report: `report_final.pdf`
 
 ## Repository Metadata
-- Repository URL: `not configured in local git remotes`
-- Commit hash: `N/A (no commit available in current working tree state)`
+- Repository URL: `https://github.com/pphattara/predictive-analytics-individual`
+- Commit hash: tracked in git history for the final submission branch
 - Build timestamp (local): `2026-03-06`
 
 ## Core Artefacts
-- Supporting report markdown export: `outputs/adult_census_income/archive/report_exports/report_final_iteration4.md`
-- Supporting report DOCX export: `outputs/adult_census_income/archive/report_exports/report_final_iteration4.docx`
-- Supporting report PDF export: `outputs/adult_census_income/archive/report_exports/report_final_iteration4.pdf`
+- Supporting report markdown export: `outputs/adult_census_income/archive/report_exports/report_supporting_export.md`
+- Supporting report DOCX export: `outputs/adult_census_income/archive/report_exports/report_supporting_export.docx`
+- Supporting report PDF export: `outputs/adult_census_income/archive/report_exports/report_supporting_export.pdf`
 - Canonical submission report: `report_final.pdf`
 - Decision log: `outputs/adult_census_income/agent_log.md`
 
@@ -29,7 +29,7 @@
 - Deep evaluation summary: `outputs/adult_census_income/metrics/module3_deep_evaluation.json`
 - Final solution bundle: `outputs/adult_census_income/metrics/final_solution_bundle.json`
 
-## Figure Artefacts (Iteration 5 Additions)
+## Figure Artefacts (Robustness Additions)
 - `outputs/adult_census_income/figures/missingness_mechanism_classification.png`
 - `outputs/adult_census_income/figures/agent_visual_correction_example.png`
 - `outputs/adult_census_income/figures/module2/mlp_training_curve.png`
@@ -51,5 +51,5 @@ python3 -u -m unittest tests/test_preprocessing.py tests/test_models.py tests/te
 - Agent interaction screenshots: `outputs/adult_census_income/interaction_log_images/`
 
 ## Section-6 Note
-- Section `6.2` in the canonical notebook is the concise technical final bundle (including Iteration 1-4 + Final evolution evidence).
+- Section `6.2` in the canonical notebook is the concise technical final bundle summarizing the project evolution and final evidence.
 - Section `6.4` remains the detailed iteration narrative and decision rationale.

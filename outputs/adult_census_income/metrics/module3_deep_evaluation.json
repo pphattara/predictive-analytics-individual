@@ -1,5 +1,5 @@
 {
-  "module": "iteration_1_module_3",
+  "module": "deep_evaluation_and_risk_review",
   "dataset": "adult_census_income",
   "selected_threshold": 0.36000000000000004,
   "test_metrics_at_selected_threshold": {

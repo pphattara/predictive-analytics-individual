@@ -46,11 +46,11 @@
 |---|---|---|---|---|
 | 16 | Final narrative polish | Suggested figure-numbered argument-led rewrite with quantified gains | Accepted (verified) | Strengthened report coherence and criterion-3 evidence quality. |
 | 17 | Reflection depth | Suggested expanding agent reflection with verification strategy detail | Modified | Kept concise but added explicit verification layers and consequence-focused discussion. |
-| 18 | Packaging scope | Suggested broad repo-wide cleanup before submission | Rejected/Corrected | Scoped changes to `assignment_final` only to protect stable workspace history. |
+| 18 | Packaging scope | Suggested broad repo-wide cleanup before submission | Rejected/Corrected | Limited changes to marker-facing submission paths first so validated outputs remained stable during cleanup. |
 
 ## Final Submission Entries
 
 | # | Agent Task | Agent Output Summary | Your Decision | Rationale |
 |---|---|---|---|---|
-| 19 | Final package assembly | Suggested consolidating Adult artefacts into a single submission folder | Accepted (verified) | Produced `assignment_final` with notebooks, data, outputs, scripts, configs and dependencies. |
+| 19 | Final package assembly | Suggested consolidating Adult artefacts into a single submission package | Accepted (verified) | Consolidated the Adult project into one root-level marker-facing package with canonical notebook, report, tests, scripts, and outputs. |
 | 20 | Final evidence checks | Suggested explicit section-level log completeness validation | Accepted (verified) | Added ordered heading checks to prevent ambiguity about iteration coverage. |

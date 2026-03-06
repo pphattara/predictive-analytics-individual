@@ -18,9 +18,9 @@ class TestPipelineSmoke(unittest.TestCase):
     def test_required_artifacts_exist(self) -> None:
         required_paths = [
             ROOT / "report_final.pdf",
-            ARCHIVE / "report_final_iteration4.md",
-            ARCHIVE / "report_final_iteration4.pdf",
-            ARCHIVE / "report_final_iteration4.docx",
+            ARCHIVE / "report_supporting_export.md",
+            ARCHIVE / "report_supporting_export.pdf",
+            ARCHIVE / "report_supporting_export.docx",
             METRICS / "evaluation_report.json",
             METRICS / "model_comparison_cv.csv",
             METRICS / "ablation_results.csv",
@@ -76,22 +76,22 @@ class TestPipelineSmoke(unittest.TestCase):
             "positive_class",
             "selection",
             "test_metrics",
-            "iteration_timeline_summary",
-            "iteration_evidence_links",
+            "project_history_summary",
+            "workflow_evidence_links",
             "module2_artifacts",
             "module3_artifacts",
-            "iteration5_robustness_artifacts",
+            "robustness_artifacts",
             "packaging_artifacts",
             "narrative_links",
             "generated_at_note",
         }
         self.assertTrue(required_keys.issubset(payload.keys()))
 
-        timeline = payload["iteration_timeline_summary"]
+        timeline = payload["project_history_summary"]
         self.assertIsInstance(timeline, dict)
         self.assertEqual(
             set(timeline.keys()),
-            {"iteration_1", "iteration_2", "iteration_3", "iteration_4", "final_submission"},
+            {"foundation_build", "six_step_restructure", "quality_uplift", "report_polish", "final_submission"},
         )
 
     def test_hygiene_no_dsstore_or_temp_docx_locks(self) -> None:
