@@ -24,19 +24,11 @@ python3 -u -m unittest tests/test_preprocessing.py tests/test_models.py tests/te
 - `outputs/adult_census_income/metrics/model_comparison_cv.csv`
 - `outputs/adult_census_income/metrics/ablation_results.csv`
 - `report_final.pdf`
-- `outputs/adult_census_income/models/best_model_module2.pkl`
 
 ## Agent Evidence
 
 - `outputs/adult_census_income/agent_log.md`
 - `outputs/adult_census_income/decision_register.pdf`
-- `outputs/adult_census_income/evidence/`
-
-## Verification Logs
-
-- `outputs/adult_census_income/evidence/notebook_execution_log_final.txt`
-- `outputs/adult_census_income/evidence/tests_log_final.txt`
-- `outputs/adult_census_income/evidence/submission_checks_log_final.txt`
 
 ## Final Verification Date
 

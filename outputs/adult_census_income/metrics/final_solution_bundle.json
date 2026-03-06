@@ -36,16 +36,13 @@
   },
   "workflow_evidence_links": {
     "agent_log": "outputs/adult_census_income/agent_log.md",
-    "decision_register": "outputs/adult_census_income/decision_register.pdf",
-    "evidence_dir": "outputs/adult_census_income/evidence/",
-    "problem_statement": "outputs/adult_census_income/problem_statement.md"
+    "decision_register": "outputs/adult_census_income/decision_register.pdf"
   },
   "module2_artifacts": {
     "model_comparison_csv": "outputs/adult_census_income/metrics/model_comparison_cv.csv",
     "ablation_csv": "outputs/adult_census_income/metrics/ablation_results.csv",
     "threshold_policy_json": "outputs/adult_census_income/metrics/threshold_policy.json",
     "evaluation_report_json": "outputs/adult_census_income/metrics/evaluation_report.json",
-    "best_model_pkl": "outputs/adult_census_income/models/best_model_module2.pkl",
     "module2_figures_dir": "outputs/adult_census_income/figures/module2/"
   },
   "module3_artifacts": {
@@ -54,7 +51,6 @@
     "worst_cases_csv": "outputs/adult_census_income/metrics/module3_worst_cases.csv",
     "permutation_importance_csv": "outputs/adult_census_income/metrics/module3_permutation_importance.csv",
     "threshold_stress_csv": "outputs/adult_census_income/metrics/module3_threshold_stress.csv",
-    "deployment_risk_md": "outputs/adult_census_income/module3_deployment_risk.md",
     "module3_figures_dir": "outputs/adult_census_income/figures/module3/"
   },
   "robustness_artifacts": {
@@ -69,7 +65,6 @@
   "packaging_artifacts": {
     "report_pdf": "report_final.pdf",
     "submission_manifest": "submission_manifest.md",
-    "final_checklist": "FINAL_CHECK.md",
     "agent_log": "outputs/adult_census_income/agent_log.md"
   },
   "narrative_links": {

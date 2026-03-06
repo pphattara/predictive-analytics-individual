@@ -22,13 +22,13 @@ jupyter nbconvert --to notebook --execute notebooks/adult_census_income_final.ip
 
 | Coursework requirement | Evidence location |
 |---|---|
-| 1. Obtain dataset and frame problem | Notebook `## 1`, `outputs/adult_census_income/problem_statement.md`, report section `1. Introduction` |
+| 1. Obtain dataset and frame problem | Notebook `## 1`, report section `1. Introduction` |
 | 2. Explore data | Notebook `## 2`, figures in `outputs/adult_census_income/figures/` |
 | 3. Prepare data | Notebook `## 3`, `outputs/adult_census_income/metrics/preprocessing_validation.json` |
 | 4. Explore models and shortlist | Notebook `## 4`, `metrics/model_comparison_cv.csv`, `metrics/ablation_results.csv` |
 | 5. Fine-tune and evaluate | Notebook `## 5`, `metrics/evaluation_report.json`, `metrics/threshold_policy.json`, calibration/ROC/PR/confusion figures |
 | 6. Present final solution | Notebook `## 6`, `metrics/final_solution_bundle.json`, model card in report |
-| Agent usage + decision register | `outputs/adult_census_income/agent_log.md`, `outputs/adult_census_income/decision_register.pdf`, `outputs/adult_census_income/evidence/` |
+| Agent usage + decision register | `outputs/adult_census_income/agent_log.md`, `outputs/adult_census_income/decision_register.pdf` |
 
 ## Repository Structure
 
@@ -41,9 +41,7 @@ project-root/
 ├── notebooks/
 │   └── adult_census_income_final.ipynb
 ├── data/
-│   ├── raw/adult_census_income/adult.csv
-│   └── processed/adult_census_income/
-├── src/
+│   └── raw/adult_census_income/adult.csv
 ├── tests/
 ├── scripts/
 │   └── run_submission_checks.sh
@@ -76,10 +74,10 @@ python3 -u -m unittest tests/test_preprocessing.py tests/test_models.py tests/te
 
 ## Tests and Validation Meaning
 
-- `tests/test_preprocessing.py`: split config, preprocessor contract, NaN/dimension checks.
-- `tests/test_models.py`: baseline model factory and experiment record contract.
-- `tests/test_evaluation.py`: classification/regression metric schema and ranges.
-- `tests/test_pipeline_smoke.py`: artefact existence/schema + hygiene checks.
+- `tests/test_preprocessing.py`: preprocessing validation contract from saved metrics.
+- `tests/test_models.py`: model-comparison, ablation, and threshold-policy artefact checks.
+- `tests/test_evaluation.py`: evaluation report metric schema and ranges.
+- `tests/test_pipeline_smoke.py`: final package artefact existence + hygiene checks.
 
 ## Output Contract (Expected)
 
@@ -90,15 +88,12 @@ Core outputs:
 - `outputs/adult_census_income/metrics/evaluation_report.json`
 - `outputs/adult_census_income/metrics/threshold_policy.json`
 - `outputs/adult_census_income/metrics/final_solution_bundle.json`
-- `outputs/adult_census_income/models/best_model_module2.pkl`
 - `report_final.pdf` (canonical submission report at repo root)
 
 Agent evidence outputs:
 
 - `outputs/adult_census_income/agent_log.md`
 - `outputs/adult_census_income/decision_register.pdf`
-- `outputs/adult_census_income/evidence/`
-
 
 ## Reproducibility Notes
 

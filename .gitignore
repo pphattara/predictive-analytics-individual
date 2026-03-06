@@ -6,3 +6,6 @@ __pycache__/
 .kaggle/
 .env
 .env.*
+data/processed/
+outputs/adult_census_income/evidence/
+outputs/adult_census_income/models/
