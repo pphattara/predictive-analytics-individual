@@ -171,13 +171,13 @@
     "interpretation": "Repeated-CV mean remains close to base CV mean; selected model ranking is stable under repeated resampling."
   },
   "artifacts": {
-    "failure_slices_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_failure_slices.csv",
-    "worst_cases_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_worst_cases.csv",
-    "importance_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_permutation_importance.csv",
-    "threshold_stress_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_threshold_stress.csv",
-    "deployment_risk_md": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/module3_deployment_risk.md",
-    "repeated_cv_stability_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/repeated_cv_stability.csv",
-    "mlp_training_curve_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/mlp_training_curve.csv",
-    "tuning_robustness_summary_json": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/tuning_robustness_summary.json"
+    "failure_slices_csv": "outputs/adult_census_income/metrics/module3_failure_slices.csv",
+    "worst_cases_csv": "outputs/adult_census_income/metrics/module3_worst_cases.csv",
+    "importance_csv": "outputs/adult_census_income/metrics/module3_permutation_importance.csv",
+    "threshold_stress_csv": "outputs/adult_census_income/metrics/module3_threshold_stress.csv",
+    "deployment_risk_md": "outputs/adult_census_income/module3_deployment_risk.md",
+    "repeated_cv_stability_csv": "outputs/adult_census_income/metrics/repeated_cv_stability.csv",
+    "mlp_training_curve_csv": "outputs/adult_census_income/metrics/mlp_training_curve.csv",
+    "tuning_robustness_summary_json": "outputs/adult_census_income/metrics/tuning_robustness_summary.json"
   }
 }

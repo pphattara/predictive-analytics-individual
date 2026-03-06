@@ -55,12 +55,13 @@ import re
 root = Path('.').resolve()
 out = root / 'outputs' / 'adult_census_income'
 metrics = out / 'metrics'
-report_md = out / 'report_final_iteration4.md'
+archive = out / 'archive' / 'report_exports'
 
 required = [
-    out / 'report_final_iteration4.md',
-    out / 'report_final_iteration4.pdf',
-    out / 'report_final_iteration4.docx',
+    root / 'report_final.pdf',
+    archive / 'report_final_iteration4.md',
+    archive / 'report_final_iteration4.pdf',
+    archive / 'report_final_iteration4.docx',
     out / 'submission_manifest.md',
     metrics / 'evaluation_report.json',
     metrics / 'final_solution_bundle.json',
@@ -112,14 +113,14 @@ expected_timeline = {'iteration_1', 'iteration_2', 'iteration_3', 'iteration_4',
 if timeline_keys != expected_timeline:
     raise SystemExit(f'final_solution_bundle.json timeline mismatch: got {sorted(timeline_keys)}')
 
-text = report_md.read_text(encoding='utf-8')
-if '## 6. References' not in text:
-    raise SystemExit('Report markdown missing references section')
-if not re.search(r'Figure\s+\d+', text):
-    raise SystemExit('Report markdown has no numbered figure references')
+report_md_text = (archive / 'report_final_iteration4.md').read_text(encoding='utf-8')
+if '## 6. References' not in report_md_text:
+    raise SystemExit('Archived report markdown missing references section')
+if not re.search(r'Figure\s+\d+', report_md_text):
+    raise SystemExit('Archived report markdown has no numbered figure references')
 
 if any(root.glob('**/.DS_Store')):
-    raise SystemExit('Found .DS_Store files in assignment_final')
+    raise SystemExit('Found .DS_Store files in project root')
 if any((out).glob('~$*.docx')):
     raise SystemExit('Found temporary Office lock files in outputs/adult_census_income')
 

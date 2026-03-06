@@ -50,17 +50,17 @@
       "non_empty": true
     },
     {
-      "path": "outputs/adult_census_income/report_final_iteration4.md",
+      "path": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.md",
       "exists": true,
       "non_empty": true
     },
     {
-      "path": "outputs/adult_census_income/report_final_iteration4.docx",
+      "path": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.docx",
       "exists": true,
       "non_empty": true
     },
     {
-      "path": "outputs/adult_census_income/report_final_iteration4.pdf",
+      "path": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.pdf",
       "exists": true,
       "non_empty": true
     },

@@ -32,7 +32,7 @@
     "iteration_2": "Coursework six-step restructuring applied to notebook/report flow.",
     "iteration_3": "Rubric-uplift pass added leakage/correlation/outlier visuals, tuning, and learning diagnostics.",
     "iteration_4": "Narrative and reporting polish with figure-numbered argument and stronger reflection.",
-    "final_submission": "assignment_final package assembled with reproducibility checks and submission artefacts."
+    "final_submission": "Root submission package assembled with reproducibility checks and final marker-facing artefacts."
   },
   "iteration_evidence_links": {
     "agent_log": "outputs/adult_census_income/agent_log.md",
@@ -68,15 +68,17 @@
     "repeated_cv_stability_fig": "outputs/adult_census_income/figures/module2/repeated_cv_stability.png"
   },
   "packaging_artifacts": {
-    "report_md": "outputs/adult_census_income/report_final_iteration4.md",
-    "report_docx": "outputs/adult_census_income/report_final_iteration4.docx",
-    "report_pdf": "outputs/adult_census_income/report_final_iteration4.pdf",
+    "report_pdf": "report_final.pdf",
+    "supporting_report_md": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.md",
+    "supporting_report_docx": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.docx",
+    "supporting_report_pdf": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.pdf",
     "submission_manifest": "outputs/adult_census_income/submission_manifest.md",
     "pre_submission_checklist": "outputs/adult_census_income/pre_submission_checklist_iteration5.md",
     "agent_log": "outputs/adult_census_income/agent_log.md"
   },
   "narrative_links": {
-    "report": "outputs/adult_census_income/report_final_iteration4.md",
+    "report": "report_final.pdf",
+    "supporting_report_markdown": "outputs/adult_census_income/archive/report_exports/report_final_iteration4.md",
     "section_6_4_narrative": "notebooks/adult_census_income_final.ipynb#section-6.4",
     "coursework_section_alignment": "outputs/adult_census_income/coursework_section_alignment.md"
   },

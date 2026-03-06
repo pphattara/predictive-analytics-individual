@@ -25,4 +25,4 @@
 - `[PASS]` Unit tests + smoke test available.
 - `[PASS]` Submission checker script added (`scripts/run_submission_checks.sh`).
 - `[PASS]` Submission manifest added (`submission_manifest.md`).
-- `[PASS]` No `.DS_Store` or Office lock files inside `assignment_final`.
+- `[PASS]` No `.DS_Store` or Office lock files inside the final submission package.

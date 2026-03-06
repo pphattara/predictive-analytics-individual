@@ -1,9 +1,9 @@
 # Submission Manifest — Adult Census Income (Final)
 
 ## Package Scope
-- Root package: `assignment_final/`
+- Root package: repository root final submission package
 - Canonical notebook: `notebooks/adult_census_income_final.ipynb`
-- Canonical report source: `outputs/adult_census_income/report_final_iteration4.md`
+- Canonical submission report: `report_final.pdf`
 
 ## Repository Metadata
 - Repository URL: `not configured in local git remotes`
@@ -11,9 +11,10 @@
 - Build timestamp (local): `2026-03-06`
 
 ## Core Artefacts
-- Report markdown: `outputs/adult_census_income/report_final_iteration4.md`
-- Report DOCX: `outputs/adult_census_income/report_final_iteration4.docx`
-- Report PDF: `outputs/adult_census_income/report_final_iteration4.pdf`
+- Supporting report markdown export: `outputs/adult_census_income/archive/report_exports/report_final_iteration4.md`
+- Supporting report DOCX export: `outputs/adult_census_income/archive/report_exports/report_final_iteration4.docx`
+- Supporting report PDF export: `outputs/adult_census_income/archive/report_exports/report_final_iteration4.pdf`
+- Canonical submission report: `report_final.pdf`
 - Decision log: `outputs/adult_census_income/agent_log.md`
 
 ## Model and Metrics Artefacts

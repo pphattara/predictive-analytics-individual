@@ -1,4 +1,4 @@
-DOCX written to: /Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/report_final_iteration4.docx
+DOCX written to: outputs/adult_census_income/archive/report_exports/report_final_iteration4.docx
 File size: 1691.9 KB
 Figures embedded: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-written outputs/adult_census_income/report_final_iteration4.pdf (7 pages)
+written outputs/adult_census_income/archive/report_exports/report_final_iteration4.pdf (7 pages)

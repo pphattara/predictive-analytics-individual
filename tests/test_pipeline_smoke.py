@@ -1,4 +1,4 @@
-"""End-to-end submission smoke checks for assignment_final artefacts."""
+"""End-to-end submission smoke checks for the final submission package."""
 
 from __future__ import annotations
 
@@ -11,14 +11,16 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs" / "adult_census_income"
 METRICS = OUT / "metrics"
 FIGS = OUT / "figures"
+ARCHIVE = OUT / "archive" / "report_exports"
 
 
 class TestPipelineSmoke(unittest.TestCase):
     def test_required_artifacts_exist(self) -> None:
         required_paths = [
-            OUT / "report_final_iteration4.md",
-            OUT / "report_final_iteration4.pdf",
-            OUT / "report_final_iteration4.docx",
+            ROOT / "report_final.pdf",
+            ARCHIVE / "report_final_iteration4.md",
+            ARCHIVE / "report_final_iteration4.pdf",
+            ARCHIVE / "report_final_iteration4.docx",
             METRICS / "evaluation_report.json",
             METRICS / "model_comparison_cv.csv",
             METRICS / "ablation_results.csv",
