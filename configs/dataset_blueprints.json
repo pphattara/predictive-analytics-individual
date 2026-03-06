@@ -1,0 +1,213 @@
+{
+  "defaults": {
+    "split": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15,
+      "random_state": 42
+    },
+    "model_families": [
+      "linear_baseline",
+      "tree_ensemble",
+      "neural_baseline"
+    ],
+    "minimum_ablations": 3,
+    "global_skill_sequence": [
+      "pa-problem-framing",
+      "pa-eda",
+      "pa-data-prep",
+      "pa-modelling",
+      "pa-evaluation",
+      "pa-report",
+      "pa-codebase",
+      "pa-agent-log"
+    ]
+  },
+  "datasets": [
+    {
+      "id": "adult_census_income",
+      "display_name": "Adult Census Income",
+      "task_type": "classification",
+      "target": "income",
+      "stakeholder": "workforce policy / HR analytics team",
+      "success_criteria": {
+        "f1_weighted_min": 0.82,
+        "positive_recall_min": 0.75
+      },
+      "eda_focus": [
+        "class imbalance ratio and subgroup distribution",
+        "normalization of '?' missing-value proxies",
+        "high-cardinality categorical leakage screening"
+      ],
+      "prep_focus": [
+        "stratified split",
+        "numeric median or KNN imputation + robust scaling",
+        "categorical mode imputation + one-hot unknown handling",
+        "assertions: no NaN, feature consistency, no leakage columns"
+      ],
+      "modelling_focus": [
+        "baseline: dummy + logistic regression",
+        "main: random forest, xgboost/lightgbm, mlp",
+        "ablations: class weighting, imputer variant, no engineered interactions, scaler swap"
+      ],
+      "evaluation_focus": [
+        "confusion matrix, PR curve, calibration curve",
+        "SHAP/permutation importance",
+        "failure slices by subgroup and occupation/education strata"
+      ],
+      "report_log_focus": [
+        "ethics and fairness caveat section",
+        "at least one rejected agent suggestion on fairness/metric misuse"
+      ]
+    },
+    {
+      "id": "bank_marketing",
+      "display_name": "Bank Marketing",
+      "task_type": "classification",
+      "target": "y",
+      "stakeholder": "campaign operations manager",
+      "success_criteria": {
+        "pr_auc_improvement_over_baseline_min_pct": 15,
+        "recall_min": 0.7
+      },
+      "eda_focus": [
+        "temporal/campaign-contact leakage audit",
+        "class imbalance and channel effects",
+        "non-linear effects for age and campaign-related fields"
+      ],
+      "prep_focus": [
+        "stratified split with optional time-aware split",
+        "categorical-heavy robust pipeline",
+        "exclude prediction-time unavailable features"
+      ],
+      "modelling_focus": [
+        "baseline: dummy + logistic",
+        "main: balanced random forest, xgboost, lightgbm",
+        "ablations: drop leakage features, class weights, imputer variant, interactions"
+      ],
+      "evaluation_focus": [
+        "threshold optimization for contact capacity",
+        "PR-first evaluation and calibration",
+        "segment failure analysis"
+      ],
+      "report_log_focus": [
+        "deployment recommendation as threshold policy",
+        "document one leakage-related correction in agent log"
+      ]
+    },
+    {
+      "id": "loan_approval_classification",
+      "display_name": "Loan Approval Classification",
+      "task_type": "classification",
+      "target": "loan_status",
+      "stakeholder": "credit risk team",
+      "success_criteria": {
+        "positive_recall_min": 0.8,
+        "positive_precision_min": 0.7
+      },
+      "eda_focus": [
+        "missingness mechanism by applicant profile",
+        "income/debt outlier and skew analysis",
+        "proxy outcome leakage scan"
+      ],
+      "prep_focus": [
+        "stratified split",
+        "MAR-informed numeric imputation",
+        "controlled categorical encoding",
+        "optional monotonic risk transforms"
+      ],
+      "modelling_focus": [
+        "baseline: logistic",
+        "main: random forest, xgboost, interpretable boosted model variant",
+        "ablations: class weighting, debt-ratio feature, imputation/encoding swap"
+      ],
+      "evaluation_focus": [
+        "false positive/false negative cost analysis",
+        "calibration for risk-score use",
+        "global and local SHAP on declined/approved edge cases"
+      ],
+      "report_log_focus": [
+        "fairness/proxy discrimination risk section",
+        "log one rejected agent metric recommendation if imbalance is present"
+      ]
+    },
+    {
+      "id": "ecommerce_customer_behavior",
+      "display_name": "Ecommerce Customer Behavior",
+      "task_type": "classification",
+      "target": "churn",
+      "stakeholder": "CRM/retention manager",
+      "success_criteria": {
+        "top_decile_lift_improvement_over_baseline_min_pct": 15,
+        "pr_auc_improvement_over_baseline_min_pct": 15
+      },
+      "eda_focus": [
+        "behavioral event distribution and seasonality if time exists",
+        "segment-level churn prevalence",
+        "missingness and sparsity in behavioral features"
+      ],
+      "prep_focus": [
+        "stratified split or temporal holdout if needed",
+        "behavior-derived feature engineering (recency/frequency/monetary-style)",
+        "leakage check for post-churn behavior columns"
+      ],
+      "modelling_focus": [
+        "baseline: logistic",
+        "main: random forest, gradient boosting, mlp",
+        "ablations: no behavior features, no class weighting, simplified encoding, no outlier handling"
+      ],
+      "evaluation_focus": [
+        "precision@k and recall@k",
+        "cohort and customer-value failure slices",
+        "interpretability for actionable retention drivers"
+      ],
+      "report_log_focus": [
+        "deployment recommendations tied to intervention budget",
+        "agent log includes one accepted and one modified feature-engineering suggestion"
+      ]
+    },
+    {
+      "id": "california_housing_prices",
+      "display_name": "California Housing Prices",
+      "task_type": "regression",
+      "target": "median_house_value",
+      "stakeholder": "pricing/risk analysis team",
+      "success_criteria": {
+        "rmse_threshold": "to_be_defined_in_problem_statement",
+        "stable_residual_behavior_required": true
+      },
+      "eda_focus": [
+        "target skew and heteroscedasticity",
+        "geographic and socioeconomic feature relationships",
+        "outlier and missingness scan in rooms/population-like fields"
+      ],
+      "prep_focus": [
+        "train/val/test random or geo-aware split",
+        "numeric imputation and scaling",
+        "categorical encoding",
+        "log-target transform ablation"
+      ],
+      "modelling_focus": [
+        "baseline: dummy mean + ridge/lasso",
+        "main: random forest regressor, xgboost regressor, mlp regressor",
+        "ablations: raw vs log target, feature engineering, imputation swap, scaler swap"
+      ],
+      "evaluation_focus": [
+        "RMSE/MAE/R2 and residual plots",
+        "QQ plot and worst-error regional clustering",
+        "SHAP/permutation plausibility checks"
+      ],
+      "report_log_focus": [
+        "limitations on temporal staleness and transferability",
+        "agent log correction from residual or metric interpretation"
+      ]
+    }
+  ],
+  "selection_scoring": {
+    "methodological_richness": 30,
+    "modelling_evaluation_headroom": 25,
+    "stakeholder_realism": 20,
+    "report_strength_potential": 15,
+    "novelty_and_risk_discussion_quality": 10
+  }
+}

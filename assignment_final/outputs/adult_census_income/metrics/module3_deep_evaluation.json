@@ -1,0 +1,183 @@
+{
+  "module": "iteration_1_module_3",
+  "dataset": "adult_census_income",
+  "selected_threshold": 0.36000000000000004,
+  "test_metrics_at_selected_threshold": {
+    "f1_weighted": 0.8622314815325313,
+    "recall_positive": 0.7840136054421769,
+    "precision_positive": 0.6794399410464259,
+    "auc_pr": 0.8281674314433404,
+    "roc_auc": 0.9258590063148473
+  },
+  "lowest_recall_slices_top5": [
+    {
+      "group_col": "relationship",
+      "group_value": "Own-child",
+      "count": 736,
+      "error_rate": 0.017663043478260868,
+      "f1_weighted": 0.9785182236110693,
+      "recall_positive": 0.3333333333333333,
+      "auc_pr": 0.7044335329869182
+    },
+    {
+      "group_col": "age_band",
+      "group_value": "[16, 25)",
+      "count": 825,
+      "error_rate": 0.009696969696969697,
+      "f1_weighted": 0.9885026519787842,
+      "recall_positive": 0.36363636363636365,
+      "auc_pr": 0.5650745937471726
+    },
+    {
+      "group_col": "relationship",
+      "group_value": "Unmarried",
+      "count": 508,
+      "error_rate": 0.045275590551181105,
+      "f1_weighted": 0.9473516536475887,
+      "recall_positive": 0.43243243243243246,
+      "auc_pr": 0.5959709656226377
+    },
+    {
+      "group_col": "hours_band",
+      "group_value": "[0, 20)",
+      "count": 256,
+      "error_rate": 0.0859375,
+      "f1_weighted": 0.9123787087143124,
+      "recall_positive": 0.5,
+      "auc_pr": 0.6276817124382481
+    },
+    {
+      "group_col": "hours_band",
+      "group_value": "[20, 35)",
+      "count": 565,
+      "error_rate": 0.04601769911504425,
+      "f1_weighted": 0.9504866347838825,
+      "recall_positive": 0.5,
+      "auc_pr": 0.713162039751114
+    }
+  ],
+  "highest_error_slices_top5": [
+    {
+      "group_col": "relationship",
+      "group_value": "Wife",
+      "count": 239,
+      "error_rate": 0.3179916317991632,
+      "f1_weighted": 0.6763797992437574,
+      "recall_positive": 0.8392857142857143,
+      "auc_pr": 0.8104554731447307
+    },
+    {
+      "group_col": "relationship",
+      "group_value": "Husband",
+      "count": 1998,
+      "error_rate": 0.24774774774774774,
+      "f1_weighted": 0.7527583042494396,
+      "recall_positive": 0.8365714285714285,
+      "auc_pr": 0.8508245696242108
+    },
+    {
+      "group_col": "hours_band",
+      "group_value": "[60, 100)",
+      "count": 382,
+      "error_rate": 0.22251308900523561,
+      "f1_weighted": 0.7790477426891114,
+      "recall_positive": 0.8238993710691824,
+      "auc_pr": 0.8517891122761304
+    },
+    {
+      "group_col": "workclass",
+      "group_value": "Self-emp-not-inc",
+      "count": 388,
+      "error_rate": 0.21391752577319587,
+      "f1_weighted": 0.7898033371334406,
+      "recall_positive": 0.6666666666666666,
+      "auc_pr": 0.7589860713716637
+    },
+    {
+      "group_col": "age_band",
+      "group_value": "[45, 55)",
+      "count": 839,
+      "error_rate": 0.20143027413587605,
+      "f1_weighted": 0.7999570037593684,
+      "recall_positive": 0.8628571428571429,
+      "auc_pr": 0.8699159107048678
+    }
+  ],
+  "top_permutation_features_top10": [
+    {
+      "feature": "marital.status",
+      "importance_mean": 0.058367563290955216,
+      "importance_std": 0.004210034047866346
+    },
+    {
+      "feature": "capital.gain",
+      "importance_mean": 0.050769016661296795,
+      "importance_std": 0.0028259500419167763
+    },
+    {
+      "feature": "education.num",
+      "importance_mean": 0.03731592078340714,
+      "importance_std": 0.003608880274146117
+    },
+    {
+      "feature": "age",
+      "importance_mean": 0.030993755828848037,
+      "importance_std": 0.003983953119749798
+    },
+    {
+      "feature": "occupation",
+      "importance_mean": 0.02265196651971031,
+      "importance_std": 0.0027772846393594583
+    },
+    {
+      "feature": "hours.per.week",
+      "importance_mean": 0.01600546248205037,
+      "importance_std": 0.002481674411514685
+    },
+    {
+      "feature": "capital.loss",
+      "importance_mean": 0.013511269065496889,
+      "importance_std": 0.0012083139115470853
+    },
+    {
+      "feature": "relationship",
+      "importance_mean": 0.01008502626693839,
+      "importance_std": 0.0017523109734060276
+    },
+    {
+      "feature": "workclass",
+      "importance_mean": 0.00938635025748975,
+      "importance_std": 0.0015380907123148315
+    },
+    {
+      "feature": "fnlwgt",
+      "importance_mean": 0.003555026971469244,
+      "importance_std": 0.001469539644912756
+    }
+  ],
+  "robustness_checks": {
+    "protocol": "RepeatedStratifiedKFold",
+    "n_splits": 5,
+    "n_repeats": 3,
+    "random_state": 42,
+    "base_cv_mean_f1_weighted": 0.8694631650740684,
+    "base_cv_std_f1_weighted": 0.002672679539190368,
+    "repeated_cv_mean_f1_weighted": 0.8694827997565245,
+    "repeated_cv_std_f1_weighted": 0.0028036581586338527,
+    "delta_mean_f1_vs_base": 1.9634682456137753e-05,
+    "mean_auc_pr": 0.8294567621643725,
+    "mean_roc_auc": 0.9282338552156267,
+    "mean_recall_positive": 0.6613833388957796,
+    "interpretation": "Repeated-CV mean remains close to base CV mean; selected model ranking is stable under repeated resampling."
+  },
+  "artifacts": {
+    "failure_slices_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_failure_slices.csv",
+    "worst_cases_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_worst_cases.csv",
+    "importance_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_permutation_importance.csv",
+    "threshold_stress_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/module3_threshold_stress.csv",
+    "deployment_risk_md": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/module3_deployment_risk.md",
+    "repeated_cv_stability_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/repeated_cv_stability.csv",
+    "mlp_training_curve_csv": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/mlp_training_curve.csv",
+    "tuning_robustness_summary_json": "/Users/princephattara/Coding Project/predictive-analytics/individual/assignment_final/outputs/adult_census_income/metrics/tuning_robustness_summary.json"
+  }
+}

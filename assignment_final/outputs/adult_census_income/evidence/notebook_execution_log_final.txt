@@ -1,0 +1,2 @@
+[NbConvertApp] Converting notebook notebooks/adult_census_income_final.ipynb to notebook
+[NbConvertApp] Writing 1754387 bytes to notebooks/adult_census_income_final.ipynb

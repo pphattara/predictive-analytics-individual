@@ -1,0 +1,54 @@
+# Submission Manifest — Adult Census Income (Final)
+
+## Package Scope
+- Root package: `assignment_final/`
+- Canonical notebook: `notebooks/adult_census_income_final.ipynb`
+- Canonical report source: `outputs/adult_census_income/report_final_iteration4.md`
+
+## Repository Metadata
+- Repository URL: `not configured in local git remotes`
+- Commit hash: `N/A (no commit available in current working tree state)`
+- Build timestamp (local): `2026-03-06`
+
+## Core Artefacts
+- Report markdown: `outputs/adult_census_income/report_final_iteration4.md`
+- Report DOCX: `outputs/adult_census_income/report_final_iteration4.docx`
+- Report PDF: `outputs/adult_census_income/report_final_iteration4.pdf`
+- Decision log: `outputs/adult_census_income/agent_log.md`
+
+## Model and Metrics Artefacts
+- Model comparison: `outputs/adult_census_income/metrics/model_comparison_cv.csv`
+- Ablation results: `outputs/adult_census_income/metrics/ablation_results.csv`
+- Threshold policy: `outputs/adult_census_income/metrics/threshold_policy.json`
+- Evaluation report: `outputs/adult_census_income/metrics/evaluation_report.json`
+- Tuning summary: `outputs/adult_census_income/metrics/hyperparameter_tuning_summary.json`
+- Repeated-CV stability: `outputs/adult_census_income/metrics/repeated_cv_stability.csv`
+- MLP training curve data: `outputs/adult_census_income/metrics/mlp_training_curve.csv`
+- Tuning robustness summary: `outputs/adult_census_income/metrics/tuning_robustness_summary.json`
+- Deep evaluation summary: `outputs/adult_census_income/metrics/module3_deep_evaluation.json`
+- Final solution bundle: `outputs/adult_census_income/metrics/final_solution_bundle.json`
+
+## Figure Artefacts (Iteration 5 Additions)
+- `outputs/adult_census_income/figures/missingness_mechanism_classification.png`
+- `outputs/adult_census_income/figures/agent_visual_correction_example.png`
+- `outputs/adult_census_income/figures/module2/mlp_training_curve.png`
+- `outputs/adult_census_income/figures/module2/repeated_cv_stability.png`
+
+## Reproducibility Commands
+```bash
+python3 -m pip install -r requirements.txt
+jupyter nbconvert --to notebook --execute notebooks/adult_census_income_final.ipynb --inplace --ExecutePreprocessor.timeout=5400
+python3 -u -m unittest tests/test_preprocessing.py tests/test_models.py tests/test_evaluation.py tests/test_pipeline_smoke.py -v
+./scripts/run_submission_checks.sh
+```
+
+## Verification Evidence
+- Notebook execution log: `outputs/adult_census_income/evidence/notebook_execution_log_final.txt`
+- Unit test log: `outputs/adult_census_income/evidence/tests_log_final.txt`
+- Submission checks log: `outputs/adult_census_income/evidence/submission_checks_log_final.txt`
+- Clean-room install attempt log: `outputs/adult_census_income/evidence/clean_room_install_attempt_final.txt`
+- Agent interaction screenshots: `outputs/adult_census_income/interaction_log_images/`
+
+## Section-6 Note
+- Section `6.2` in the canonical notebook is the concise technical final bundle (including Iteration 1-4 + Final evolution evidence).
+- Section `6.4` remains the detailed iteration narrative and decision rationale.

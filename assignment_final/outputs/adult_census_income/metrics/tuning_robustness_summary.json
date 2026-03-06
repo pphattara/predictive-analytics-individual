@@ -1,0 +1,15 @@
+{
+  "protocol": "RepeatedStratifiedKFold",
+  "n_splits": 5,
+  "n_repeats": 3,
+  "random_state": 42,
+  "base_cv_mean_f1_weighted": 0.8694631650740684,
+  "base_cv_std_f1_weighted": 0.002672679539190368,
+  "repeated_cv_mean_f1_weighted": 0.8694827997565245,
+  "repeated_cv_std_f1_weighted": 0.0028036581586338527,
+  "delta_mean_f1_vs_base": 1.9634682456137753e-05,
+  "mean_auc_pr": 0.8294567621643725,
+  "mean_roc_auc": 0.9282338552156267,
+  "mean_recall_positive": 0.6613833388957796,
+  "interpretation": "Repeated-CV mean remains close to base CV mean; selected model ranking is stable under repeated resampling."
+}

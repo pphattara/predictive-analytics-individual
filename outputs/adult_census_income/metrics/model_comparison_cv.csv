@@ -1,0 +1,6 @@
+experiment_id,dataset,model_family,pipeline_variant,cv_mean,cv_std,test_metric,notes,auc_pr_mean,roc_auc_mean,recall_positive_mean,runtime_sec
+m2_cmp_tuned_hgb,adult_census_income,tree_hgb_tuned,robust,0.8694631650740684,0.002672679539190368,,"RandomizedSearchCV best_params={'min_samples_leaf': 10, 'max_leaf_nodes': 31, 'max_iter': 300, 'learning_rate': 0.08, 'l2_regularization': 0.1}",0.8304311610613851,0.9286424953347536,0.6605952979893832,13.568104028701782
+m2_cmp_03,adult_census_income,tree_hist_gradient_boosting,robust,0.8688356076569791,0.002786915130009184,,5-fold stratified CV on training split,0.8274085056032014,0.9272971057043531,0.6565863515831387,14.704911231994629
+m2_cmp_04,adult_census_income,neural_mlp,robust,0.8511107828268027,0.0024757335756111095,,5-fold stratified CV on training split,0.7779837362786679,0.9106792905723993,0.629082794108124,20.99244999885559
+m2_cmp_02,adult_census_income,tree_random_forest,robust,0.8510748243080164,0.00756353094563623,,5-fold stratified CV on training split,0.7660007465604103,0.9043613915211196,0.6181463604166355,20.55557107925415
+m2_cmp_01,adult_census_income,linear_logistic,robust,0.8211389717609577,0.005143244674833729,,5-fold stratified CV on training split,0.7660872166839006,0.9070678606595329,0.8506106237743938,147.47028613090515

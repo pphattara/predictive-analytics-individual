@@ -1,0 +1,26 @@
+age,workclass,fnlwgt,education,education.num,marital.status,occupation,relationship,race,sex,capital.gain,capital.loss,hours.per.week,native.country,y_true,y_pred,y_prob,is_error,age_band,hours_band,confidence
+21,Private,548303,HS-grad,9,Married-civ-spouse,Prof-specialty,Own-child,White,Male,0,0,40,Mexico,1,0,0.0034097795742336237,1,"[16, 25)","[35, 45)",0.9965902204257664
+24,Private,23438,Assoc-voc,11,Never-married,Adm-clerical,Not-in-family,White,Male,0,0,30,United-States,1,0,0.007044957867801423,1,"[16, 25)","[20, 35)",0.9929550421321985
+26,Private,153078,HS-grad,9,Never-married,Adm-clerical,Own-child,Asian-Pac-Islander,Male,0,0,80,,1,0,0.011722575377439056,1,"[25, 35)","[60, 100)",0.988277424622561
+29,Private,54932,Some-college,10,Divorced,Craft-repair,Unmarried,White,Male,0,0,35,United-States,1,0,0.014676564682346998,1,"[25, 35)","[35, 45)",0.985323435317653
+27,Local-gov,229223,Some-college,10,Never-married,Protective-serv,Own-child,White,Female,0,0,40,United-States,1,0,0.01572378727385971,1,"[25, 35)","[35, 45)",0.9842762127261403
+32,Private,213179,Some-college,10,Divorced,Craft-repair,Own-child,White,Male,0,0,40,United-States,1,0,0.01638267708455939,1,"[25, 35)","[35, 45)",0.9836173229154406
+24,Private,145964,Bachelors,13,Never-married,Exec-managerial,Unmarried,White,Male,0,0,40,United-States,1,0,0.017186488735587566,1,"[16, 25)","[35, 45)",0.9828135112644124
+42,Private,230624,10th,6,Never-married,Transport-moving,Unmarried,White,Male,0,0,40,United-States,1,0,0.017435099330203443,1,"[35, 45)","[35, 45)",0.9825649006697965
+28,Local-gov,250135,Masters,14,Married-civ-spouse,Prof-specialty,Wife,White,Female,0,1902,55,United-States,0,1,0.9818255775063066,1,"[25, 35)","[45, 60)",0.9818255775063066
+47,Private,198769,Some-college,10,Never-married,Adm-clerical,Not-in-family,White,Female,0,0,40,United-States,1,0,0.01946737268209531,1,"[45, 55)","[35, 45)",0.9805326273179047
+58,Private,372181,HS-grad,9,Divorced,Sales,Unmarried,White,Female,0,0,40,United-States,1,0,0.022749158897690146,1,"[55, 65)","[35, 45)",0.9772508411023099
+58,Private,110213,HS-grad,9,Widowed,Adm-clerical,Not-in-family,White,Female,0,0,40,United-States,1,0,0.023072319917640083,1,"[55, 65)","[35, 45)",0.9769276800823599
+24,Private,161708,HS-grad,9,Divorced,Exec-managerial,Not-in-family,White,Female,0,0,45,United-States,1,0,0.025004266955932854,1,"[16, 25)","[45, 60)",0.9749957330440672
+30,Private,76107,HS-grad,9,Never-married,Transport-moving,Not-in-family,White,Male,0,0,45,United-States,1,0,0.02571208681865422,1,"[25, 35)","[45, 60)",0.9742879131813458
+29,Self-emp-not-inc,128516,Assoc-acdm,12,Widowed,Sales,Unmarried,White,Female,0,0,40,United-States,1,0,0.025849905192709466,1,"[25, 35)","[35, 45)",0.9741500948072905
+51,Self-emp-not-inc,388496,Some-college,10,Divorced,Craft-repair,Not-in-family,White,Male,0,0,8,Puerto-Rico,1,0,0.027851995036350767,1,"[45, 55)","[0, 20)",0.9721480049636493
+35,Private,175614,Assoc-voc,11,Divorced,Prof-specialty,Unmarried,White,Female,0,0,40,United-States,1,0,0.02909297962008221,1,"[35, 45)","[35, 45)",0.9709070203799178
+25,Private,212793,Assoc-acdm,12,Never-married,Prof-specialty,Not-in-family,White,Male,0,0,50,United-States,1,0,0.02954550649546541,1,"[25, 35)","[45, 60)",0.9704544935045346
+47,Private,176140,HS-grad,9,Divorced,Exec-managerial,Unmarried,Black,Female,0,0,40,United-States,1,0,0.02977589080582138,1,"[45, 55)","[35, 45)",0.9702241091941786
+40,Private,286370,7th-8th,4,Married-civ-spouse,Machine-op-inspct,Husband,White,Male,0,0,40,Mexico,1,0,0.03173689092506107,1,"[35, 45)","[35, 45)",0.968263109074939
+42,State-gov,160369,HS-grad,9,Never-married,Protective-serv,Not-in-family,White,Male,0,0,40,United-States,1,0,0.03547941738219944,1,"[35, 45)","[35, 45)",0.9645205826178006
+26,Private,157028,Masters,14,Never-married,Prof-specialty,Not-in-family,White,Male,0,0,55,United-States,1,0,0.039094860237381866,1,"[25, 35)","[45, 60)",0.9609051397626182
+58,Private,118303,HS-grad,9,Widowed,Sales,Not-in-family,White,Female,0,0,35,United-States,1,0,0.042679583472556494,1,"[55, 65)","[35, 45)",0.9573204165274435
+65,,76043,HS-grad,9,Married-civ-spouse,,Husband,White,Male,0,0,1,United-States,1,0,0.04274127528527835,1,"[65, 90)","[0, 20)",0.9572587247147216
+70,Self-emp-not-inc,268832,Assoc-voc,11,Married-civ-spouse,Farming-fishing,Husband,White,Male,0,0,24,United-States,1,0,0.04399577358344696,1,"[65, 90)","[20, 35)",0.956004226416553

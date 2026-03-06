@@ -1,0 +1,7 @@
+{
+  "dataset": "ecommerce_customer_behavior",
+  "status": "pending",
+  "classification_metrics": {},
+  "regression_metrics": {},
+  "failure_mode_summary": "pending"
+}

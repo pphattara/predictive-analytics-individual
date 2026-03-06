@@ -1,0 +1,11 @@
+column,missing_pct,likely_type
+occupation,5.660145572924664,Likely MAR (depends on employment/profile reporting)
+workclass,5.638647461687294,Likely MAR (depends on employment profile)
+native.country,1.7904855501980899,Likely MAR/MNAR (non-response may be systematic)
+fnlwgt,0.0,Likely MCAR
+education,0.0,Likely MCAR
+education.num,0.0,Likely MCAR
+age,0.0,Likely MCAR
+marital.status,0.0,Likely MCAR
+relationship,0.0,Likely MCAR
+sex,0.0,Likely MCAR

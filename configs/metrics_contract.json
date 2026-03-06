@@ -1,0 +1,16 @@
+{
+  "classification": [
+    "f1_weighted",
+    "auc_pr",
+    "roc_auc",
+    "recall_positive",
+    "calibration_error"
+  ],
+  "regression": [
+    "rmse",
+    "mae",
+    "r2",
+    "mape",
+    "residual_diagnostics_summary"
+  ]
+}

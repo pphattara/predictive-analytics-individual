@@ -1,0 +1,7 @@
+{
+  "dataset": "california_housing_prices",
+  "status": "pending",
+  "classification_metrics": {},
+  "regression_metrics": {},
+  "failure_mode_summary": "pending"
+}

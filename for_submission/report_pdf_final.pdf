@@ -1,0 +1,711 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 7 /Kids [ 4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2982 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+(PREDICTING ANNUAL INCOME WITH THE ADULT CENSUS DATASET) Tj
+0 -14 Td
+(MSIN0097 Predictive Analytics — Individual Coursework) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(---) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. Introduction) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(This project predicts whether an individual earns >50K per year using the Adult Census) Tj
+0 -14 Td
+(Income dataset. The intended stakeholder is a workforce policy or HR analytics team that) Tj
+0 -14 Td
+(needs priority ranking rather than a perfect deterministic rule. A binary classifier is) Tj
+0 -14 Td
+(appropriate because the operational decision is whether an individual likely belongs in a) Tj
+0 -14 Td
+(higher-income segment, not exact income estimation.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The dataset contains 32,561 records and 14 predictors \(Kohavi, 1996; Dua and Graff, 2019\).) Tj
+0 -14 Td
+(The target is imbalanced: 75.9% <=50K and 24.1% >50K \(Figure 1\), so raw accuracy is not a) Tj
+0 -14 Td
+(safe primary metric. Before any modelling, success criteria were fixed as:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- weighted F1 >= 0.82) Tj
+0 -14 Td
+(- positive-class recall \(>50K\) >= 0.75) Tj
+0 -14 Td
+(- calibration quality suitable for threshold-based policy decisions) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The final model is a tuned HistGradientBoosting classifier with operating threshold 0.36.) Tj
+0 -14 Td
+(On the untouched test set, it achieves weighted F1 0.862, recall 0.784, PR-AUC 0.828,) Tj
+0 -14 Td
+(ROC-AUC 0.926, and calibration error \(ECE\) 0.014. Relative to the logistic baseline,) Tj
+0 -14 Td
+(this is a +0.041 absolute F1 gain, or approximately +5.0% relative improvement.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(This report follows the coursework six-step structure and documents both model evidence and) Tj
+0 -14 Td
+(agent-assisted decision verification.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(---) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. Methodology) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2.1 EDA-driven design decisions) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(EDA was run to drive decisions, not just describe data.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Numeric distributions \(Figure 2\) show extreme right-skew in capital.gain and) Tj
+0 -14 Td
+(capital.loss with dominant zero mass and long positive tails. This motivated robust,) Tj
+0 -14 Td
+(leak-safe preprocessing and explicit outlier diagnostics.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Missingness is concentrated in occupation \(5.66%\), workclass \(5.64%\), and) Tj
+0 -14 Td
+(native.country \(1.79%\) \(Figure 3\). Figure 20 adds a mechanism classification map) Tj
+0 -14 Td
+(\(MCAR/MAR/MNAR heuristic labels\) and makes the caveat explicit: the labels are practical) Tj
+0 -14 Td
+(working assumptions, not proven causal mechanisms. The implication remains the same:) Tj
+0 -14 Td
+(row deletion is riskier than imputation because it removes signal and may amplify class/slice) Tj
+0 -14 Td
+(imbalance.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Leakage checks were made explicit. Figure 4 shows no numeric feature with absolute) Tj
+0 -14 Td
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 3169 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+(point-biserial correlation near the 0.9 suspicion threshold. Figure 5 \(correlation heatmap\)) Tj
+0 -14 Td
+(highlights redundancy between education and education.num, later tested via ablation.) Tj
+0 -14 Td
+(Figure 6 confirms separation signal for features linked to household structure and capital,) Tj
+0 -14 Td
+(while Figures 7-8 show outlier concentration without a single dominant leakage-like feature.) Tj
+0 -14 Td
+(The IQR plot \(Figure 7\) indicates high rates for hours.per.week, but the Isolation Forest) Tj
+0 -14 Td
+(scatter \(Figure 8\) confirms these points are distributed rather than concentrated into a) Tj
+0 -14 Td
+(single pathological subgroup. That finding supported retaining outliers and handling them) Tj
+0 -14 Td
+(through robust preprocessing plus downstream threshold stress testing, rather than hard) Tj
+0 -14 Td
+(trimming rules that could disproportionately remove minority slices.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(To satisfy the visual-verification requirement, Figure 21 documents one explicit agent-plot) Tj
+0 -14 Td
+(correction: a raw-missing-count chart was replaced with normalized percentages because raw) Tj
+0 -14 Td
+(counts can mis-prioritize columns. This correction was retained as evidence of human review,) Tj
+0 -14 Td
+(not silently overwritten.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2.2 Data preparation and leakage discipline) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Data was split before preprocessing using stratified 70/15/15 with random_state=42.) Tj
+0 -14 Td
+(All transformers were fit only on training data. The preprocessing pipeline uses:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- numeric: median imputation + RobustScaler) Tj
+0 -14 Td
+(- categorical: most-frequent imputation + one-hot encoding \(handle_unknown='ignore'\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Post-transform assertions verified:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- no NaN values in train/val/test transformed matrices) Tj
+0 -14 Td
+(- consistent feature dimensions across all splits) Tj
+0 -14 Td
+(- preserved class balance after stratification) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(This split-first discipline, together with pipeline encapsulation, prevents target leakage and) Tj
+0 -14 Td
+(keeps CV/test estimates trustworthy.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2.3 Model shortlist, ablation, and tuning protocol) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The shortlist intentionally spans linear, tree-ensemble, and neural families:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Logistic Regression \(interpretable linear floor\)) Tj
+0 -14 Td
+(- Random Forest) Tj
+0 -14 Td
+(- HistGradientBoosting) Tj
+0 -14 Td
+(- MLPClassifier \(64x32, early stopping\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(A majority baseline \(DummyClassifier\) establishes the minimum bar.) Tj
+0 -14 Td
+(All candidates were evaluated with StratifiedKFold\(n_splits=5, shuffle=True,) Tj
+0 -14 Td
+(random_state=42\) and consistent scoring \(f1_weighted, PR-AUC, ROC-AUC,) Tj
+0 -14 Td
+(positive recall\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Ablation design used one-change-at-a-time variants on the winning family:) Tj
+0 -14 Td
+(class-weight removal, scaler swap, fnlwgt drop, education-field redundancy checks,) Tj
+0 -14 Td
+(and capital-feature removal.) Tj
+0 -14 Td
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2743 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+() Tj
+0 -14 Td
+(Hyperparameter tuning used RandomizedSearchCV on HistGradientBoosting) Tj
+0 -14 Td
+(\(20 draws, 3-fold CV\), with explicit search space and persisted best parameters.) Tj
+0 -14 Td
+(This is not exhaustive global optimization, but it is principled and reproducible.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2.4 Fine-tuning and robustness checks) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Threshold tuning was performed on validation data only under recall constraint) Tj
+0 -14 Td
+(\(recall_positive >= 0.75\), then frozen at 0.36.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Iteration 5 added two robustness upgrades:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Figure 22: MLP training dynamics \(loss/validation trajectories\) to show convergence) Tj
+0 -14 Td
+(behaviour for the modern baseline) Tj
+0 -14 Td
+(- Figure 23 + repeated_cv_stability.csv: repeated CV stability check using) Tj
+0 -14 Td
+(RepeatedStratifiedKFold\(5x3\) on the selected pipeline) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The repeated-CV mean remains close to the base CV mean, supporting that model ranking was) Tj
+0 -14 Td
+(not a single-split artifact.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(---) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. Results) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3.1 Cross-validated model comparison) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Table 1. Five-fold stratified CV results across shortlisted families) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(| Model | CV F1 \(mean ± std\) | AUC-PR | ROC-AUC | Recall+ |) Tj
+0 -14 Td
+(|------------------------|--------------------|--------|---------|---------|) Tj
+0 -14 Td
+(| Majority baseline | 0.655 — | 0.241 | 0.500 | 0.000 |) Tj
+0 -14 Td
+(| Logistic Regression | 0.821 ± 0.005 | 0.766 | 0.907 | 0.851 |) Tj
+0 -14 Td
+(| Random Forest | 0.851 ± 0.008 | 0.766 | 0.904 | 0.618 |) Tj
+0 -14 Td
+(| MLP \(64x32\) | 0.851 ± 0.002 | 0.778 | 0.911 | 0.629 |) Tj
+0 -14 Td
+(| HGB \(untuned\) | 0.869 ± 0.003 | 0.827 | 0.927 | 0.657 |) Tj
+0 -14 Td
+(| HGB \(tuned\) | 0.869 ± 0.003 |0.830|0.929| 0.661 |) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The tuned HGB remains first on weighted F1 and ranking metrics \(Figure 9\). Improvement over) Tj
+0 -14 Td
+(untuned HGB is intentionally reported as small \(about +0.0007 F1 in the saved run\):) Tj
+0 -14 Td
+(tuning was justified as robustness and reproducibility evidence, not a dramatic uplift claim.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3.2 Ablation evidence) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Table 2. One-change-at-a-time ablations on HistGradientBoosting) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(| Variant | CV F1 \(mean ± std\) | Change vs reference |) Tj
+0 -14 Td
+(|-------------------------|--------------------|---------------------|) Tj
+0 -14 Td
+(| drop_education_text | 0.8693 ± 0.0028 | +0.06pp |) Tj
+0 -14 Td
+(| reference | 0.8688 ± 0.0028 | — |) Tj
+0 -14 Td
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 3067 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+(| no_class_weight | 0.8688 ± 0.0028 | 0.00pp |) Tj
+0 -14 Td
+(| standard_scaler | 0.8688 ± 0.0028 | 0.00pp |) Tj
+0 -14 Td
+(| drop_fnlwgt | 0.8681 ± 0.0031 | −0.07pp |) Tj
+0 -14 Td
+(| drop_education_num | 0.8681 ± 0.0025 | −0.07pp |) Tj
+0 -14 Td
+(| no_capital_features | 0.8381 ± 0.0032| −3.08pp |) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The largest movement is capital-feature removal \(Figure 10\), confirming that sparse capital) Tj
+0 -14 Td
+(signals are central to discrimination despite heavy skew and zero inflation.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3.3 Final test performance \(single-touch\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Final evaluation was performed once on held-out test data after model and threshold freeze.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(| Metric | Value | Criterion |) Tj
+0 -14 Td
+(|-----------------------|-------|-----------|) Tj
+0 -14 Td
+(| Weighted F1 | 0.862 | >= 0.82 ✅ |) Tj
+0 -14 Td
+(| PR-AUC | 0.828 | — |) Tj
+0 -14 Td
+(| ROC-AUC | 0.926 | — |) Tj
+0 -14 Td
+(| Recall \(>50K\) | 0.784 | >= 0.75 ✅ |) Tj
+0 -14 Td
+(| Precision \(>50K\) | 0.679 | — |) Tj
+0 -14 Td
+(| Calibration \(ECE\) | 0.014 | Required ✅ |) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Figure 11 \(learning curve\) shows validation F1 flattening as sample size grows, which) Tj
+0 -14 Td
+(suggests limited benefit from additional data under current feature set unless data quality) Tj
+0 -14 Td
+(changes. Figure 12 \(normalized confusion matrix\) makes the error trade-off explicit at the) Tj
+0 -14 Td
+(chosen threshold. Figure 13 \(PR curve\) shows strong positive-class ranking where precision) Tj
+0 -14 Td
+(must be controlled under intervention budgets. Figure 14 \(ROC curve\) confirms high global) Tj
+0 -14 Td
+(discrimination performance, which matters because prevalence can shift across cohorts.) Tj
+0 -14 Td
+(Figure 15 confirms that predicted probabilities remain close to observed frequencies, so) Tj
+0 -14 Td
+(score-based triage rules are more defensible than hard class labels alone.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Taken together, Figures 11-15 justify the final operating decision: the model is not) Tj
+0 -14 Td
+(selected only because of F1, but because it jointly satisfies ranking quality, calibration,) Tj
+0 -14 Td
+(and recall constraints under a clearly stated threshold policy.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3.4 Error and failure-mode analysis) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Error is heterogeneous by subgroup. Figure 16 shows low recall in Own-child and younger) Tj
+0 -14 Td
+(age-band slices. Figure 17 shows elevated error rates for selected relationship groups.) Tj
+0 -14 Td
+(Figure 18 confirms model dependence on marital.status and capital features, creating a) Tj
+0 -14 Td
+(plausible fairness and transferability risk.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Threshold sensitivity \(Figure 19\) shows that ±0.05 around 0.36 shifts recall by) Tj
+0 -14 Td
+(approximately 4-5 percentage points, so threshold is an operational control, not a static) Tj
+0 -14 Td
+(constant.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(---) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. Discussion) Tj
+0 -14 Td
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 3159 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+() Tj
+0 -14 Td
+(4.1 What is strong) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The pipeline is statistically disciplined \(split-first, no leakage, test single-touch\),) Tj
+0 -14 Td
+(methodologically broad \(baseline + multiple families + ablations\), and operationally grounded) Tj
+0 -14 Td
+(\(calibration + threshold policy + subgroup diagnostics\). This combination supports decision) Tj
+0 -14 Td
+(support use better than leaderboard-only tuning.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4.2 Limitations) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. Dataset age and shift risk: Adult Census reflects 1994 distributions. Workforce) Tj
+0 -14 Td
+(composition and income structure have changed, so external validity is limited.) Tj
+0 -14 Td
+(2. Subgroup recall disparity: some slices remain under-recalled, which is material for) Tj
+0 -14 Td
+(intervention or triage use cases.) Tj
+0 -14 Td
+(3. Feature semantics risk: high-importance household-structure features may encode) Tj
+0 -14 Td
+(social structure effects that do not transfer safely across contexts.) Tj
+0 -14 Td
+(4. Tuning uplift magnitude: hyperparameter tuning improved stability more than headline) Tj
+0 -14 Td
+(performance; this is honest but limits raw performance gains.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4.3 Verification strategies: what worked, what failed, why) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(This section captures metacognitive verification rather than a task log.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Worked well \(accepted\):) Tj
+0 -14 Td
+(- CV scaffold and fixed-seed protocol suggestions were fast to validate and low-risk.) Tj
+0 -14 Td
+(Re-running CV reproduced metric bands closely, so these were accepted with minimal friction.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Worked with modification \(modified\):) Tj
+0 -14 Td
+(- Missingness handling: an agent suggestion to drop missing rows was modified after checking) Tj
+0 -14 Td
+(that deletion would remove ~5.6% of records and distort class balance.) Tj
+0 -14 Td
+(- Interpretability tooling: SHAP-first suggestion was replaced by permutation importance to) Tj
+0 -14 Td
+(stay within dependency constraints while preserving global feature diagnostics.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Failed and required rejection \(rejected\):) Tj
+0 -14 Td
+(- Accuracy-first ranking on imbalanced data was rejected because it obscured positive-class) Tj
+0 -14 Td
+(recovery trade-offs.) Tj
+0 -14 Td
+(- Static-threshold recommendation without stress testing was rejected; threshold sweep evidence) Tj
+0 -14 Td
+(showed material policy sensitivity.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The key pattern: agent output is efficient for scaffolding and boilerplate, but analytical) Tj
+0 -14 Td
+(claims require explicit empirical verification before adoption.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4.4 Next steps) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(- Add subgroup-aware monitoring with hard governance floors \(for example, minimum recall) Tj
+0 -14 Td
+(thresholds for slices above a minimum sample size\).) Tj
+0 -14 Td
+(- Recalibrate and re-threshold on newer data snapshots to mitigate temporal shift.) Tj
+0 -14 Td
+(- Evaluate fairness-constrained post-processing and compare precision cost explicitly.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 2755 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+(4.5 Operational guardrails before deployment) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(If this model were transitioned beyond coursework, three guardrails would be mandatory.) Tj
+0 -14 Td
+(First, a monitoring dashboard should track weighted F1, recall \(>50K\), and ECE at a fixed) Tj
+0 -14 Td
+(cadence, with explicit alert thresholds and a documented owner for intervention. Second,) Tj
+0 -14 Td
+(subgroup monitoring should use both minimum sample-size rules and confidence intervals to) Tj
+0 -14 Td
+(avoid over-reacting to noise in very small slices. Third, any threshold revision should be) Tj
+0 -14 Td
+(logged as a policy change with pre/post impact simulation, not performed ad hoc by) Tj
+0 -14 Td
+(individual analysts. These controls are simple but materially reduce the risk that a stable) Tj
+0 -14 Td
+(offline model drifts into unsafe behavior in live use.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(---) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. Model Card) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Model: HistGradientBoosting Classifier \(tuned\) + threshold policy 0.36) Tj
+0 -14 Td
+(Intended use: decision support for workforce/HR prioritization) Tj
+0 -14 Td
+(Not for: fully automated high-stakes decisions \(hiring, credit, benefits\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Data provenance: UCI Adult Census Income, 32,561 rows, 14 features, historical US census) Tj
+0 -14 Td
+(sample \(Kohavi, 1996; Dua and Graff, 2019\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Evaluation summary \(test set\):) Tj
+0 -14 Td
+(- F1 weighted: 0.862) Tj
+0 -14 Td
+(- PR-AUC: 0.828) Tj
+0 -14 Td
+(- ROC-AUC: 0.926) Tj
+0 -14 Td
+(- Recall \(>50K\): 0.784) Tj
+0 -14 Td
+(- Calibration error \(ECE\): 0.014) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Caveats:) Tj
+0 -14 Td
+(- Under-recall in specific age/relationship slices.) Tj
+0 -14 Td
+(- Threshold sensitivity around operational point.) Tj
+0 -14 Td
+(- Temporal transferability risk due to dataset vintage.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(---) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. References) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Bergstra, J. and Bengio, Y. \(2012\) 'Random search for hyper-parameter optimization',) Tj
+0 -14 Td
+(Journal of Machine Learning Research, 13\(10\), pp. 281-305.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Dua, D. and Graff, C. \(2019\) UCI Machine Learning Repository. Irvine, CA: University of) Tj
+0 -14 Td
+(California, School of Information and Computer Science. Available at:) Tj
+0 -14 Td
+(https://archive.ics.uci.edu \(Accessed: 4 March 2026\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Kohavi, R. \(1996\) 'Scaling up the accuracy of Naive-Bayes classifiers: A decision-tree) Tj
+0 -14 Td
+(hybrid'. In: *Proceedings of the Second International Conference on Knowledge Discovery and) Tj
+0 -14 Td
+(Data Mining \(KDD-96\)*. Portland, OR: AAAI Press, pp. 202-207.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 186 >>
+stream
+BT
+/F1 11 Tf
+50 742 Td
+(Pedregosa, F. et al. \(2011\) 'Scikit-learn: Machine Learning in Python', *Journal of) Tj
+0 -14 Td
+(Machine Learning Research*, 12, pp. 2825-2830.) Tj
+0 -14 Td
+ET
+endstream
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000157 00000 n 
+0000000227 00000 n 
+0000000353 00000 n 
+0000003387 00000 n 
+0000003513 00000 n 
+0000006734 00000 n 
+0000006860 00000 n 
+0000009655 00000 n 
+0000009783 00000 n 
+0000012903 00000 n 
+0000013031 00000 n 
+0000016243 00000 n 
+0000016371 00000 n 
+0000019179 00000 n 
+0000019307 00000 n 
+trailer
+<< /Size 18 /Root 1 0 R >>
+startxref
+19545
+%%EOF

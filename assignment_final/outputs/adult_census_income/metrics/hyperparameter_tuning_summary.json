@@ -1,0 +1,47 @@
+{
+  "search_type": "RandomizedSearchCV",
+  "estimator": "HistGradientBoostingClassifier",
+  "scoring": "f1_weighted",
+  "cv_folds": 3,
+  "n_iter": 20,
+  "param_distributions": {
+    "model__learning_rate": [
+      0.03,
+      0.05,
+      0.08,
+      0.1,
+      0.15
+    ],
+    "model__max_leaf_nodes": [
+      15,
+      31,
+      63,
+      127
+    ],
+    "model__min_samples_leaf": [
+      10,
+      20,
+      40,
+      60
+    ],
+    "model__l2_regularization": [
+      0.0,
+      0.01,
+      0.05,
+      0.1
+    ],
+    "model__max_iter": [
+      200,
+      300,
+      400
+    ]
+  },
+  "best_score_cv": 0.8689729791167152,
+  "best_params": {
+    "min_samples_leaf": 10,
+    "max_leaf_nodes": 31,
+    "max_iter": 300,
+    "learning_rate": 0.08,
+    "l2_regularization": 0.1
+  }
+}

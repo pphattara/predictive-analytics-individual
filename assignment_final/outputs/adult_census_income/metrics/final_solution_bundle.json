@@ -1,0 +1,84 @@
+{
+  "module": "final_solution_bundle",
+  "dataset": "adult_census_income",
+  "target": "income",
+  "positive_class": ">50K",
+  "selection": {
+    "module": "iteration_1_module_2",
+    "dataset": "adult_census_income",
+    "selected_source": "candidate",
+    "selected_model_family": "tree_hgb_tuned",
+    "selected_variant": "reference",
+    "selected_scaler": "robust",
+    "dropped_columns": [],
+    "cv_mean_f1_weighted": 0.8694631650740684,
+    "cv_std_f1_weighted": 0.002672679539190368,
+    "threshold": 0.36000000000000004,
+    "validation_f1_weighted_at_threshold": 0.8576448188988381,
+    "validation_recall_positive_at_threshold": 0.7568027210884354,
+    "validation_precision_positive_at_threshold": 0.6783536585365854,
+    "rationale": "Selected highest weighted F1 among thresholds meeting recall_positive >= 0.75."
+  },
+  "test_metrics": {
+    "f1_weighted": 0.8622314815325313,
+    "auc_pr": 0.8281674314433404,
+    "roc_auc": 0.9258590063148473,
+    "recall_positive": 0.7840136054421769,
+    "calibration_error": 0.013923257840017543,
+    "brier_score": 0.08896255720747469
+  },
+  "iteration_timeline_summary": {
+    "iteration_1": "Modules 1/2/3 completed: framing, EDA, preprocessing, modelling, evaluation, and deep error analysis.",
+    "iteration_2": "Coursework six-step restructuring applied to notebook/report flow.",
+    "iteration_3": "Rubric-uplift pass added leakage/correlation/outlier visuals, tuning, and learning diagnostics.",
+    "iteration_4": "Narrative and reporting polish with figure-numbered argument and stronger reflection.",
+    "final_submission": "assignment_final package assembled with reproducibility checks and submission artefacts."
+  },
+  "iteration_evidence_links": {
+    "agent_log": "outputs/adult_census_income/agent_log.md",
+    "iteration2_fit": "outputs/adult_census_income/iteration2_steps_heading_fit.md",
+    "iteration3_fit": "outputs/adult_census_income/iteration3_steps_heading_fit.md",
+    "iteration4_fit": "outputs/adult_census_income/iteration4_steps_heading_fit.md",
+    "coursework_brief_alignment": "outputs/adult_census_income/coursework_brief_6_steps_alignment.md"
+  },
+  "module2_artifacts": {
+    "model_comparison_csv": "outputs/adult_census_income/metrics/model_comparison_cv.csv",
+    "ablation_csv": "outputs/adult_census_income/metrics/ablation_results.csv",
+    "threshold_policy_json": "outputs/adult_census_income/metrics/threshold_policy.json",
+    "evaluation_report_json": "outputs/adult_census_income/metrics/evaluation_report.json",
+    "best_model_pkl": "outputs/adult_census_income/models/best_model_module2.pkl",
+    "module2_figures_dir": "outputs/adult_census_income/figures/module2/"
+  },
+  "module3_artifacts": {
+    "module3_deep_evaluation_json": "outputs/adult_census_income/metrics/module3_deep_evaluation.json",
+    "failure_slices_csv": "outputs/adult_census_income/metrics/module3_failure_slices.csv",
+    "worst_cases_csv": "outputs/adult_census_income/metrics/module3_worst_cases.csv",
+    "permutation_importance_csv": "outputs/adult_census_income/metrics/module3_permutation_importance.csv",
+    "threshold_stress_csv": "outputs/adult_census_income/metrics/module3_threshold_stress.csv",
+    "deployment_risk_md": "outputs/adult_census_income/module3_deployment_risk.md",
+    "module3_figures_dir": "outputs/adult_census_income/figures/module3/"
+  },
+  "iteration5_robustness_artifacts": {
+    "repeated_cv_stability_csv": "outputs/adult_census_income/metrics/repeated_cv_stability.csv",
+    "mlp_training_curve_csv": "outputs/adult_census_income/metrics/mlp_training_curve.csv",
+    "tuning_robustness_summary_json": "outputs/adult_census_income/metrics/tuning_robustness_summary.json",
+    "missingness_mechanism_fig": "outputs/adult_census_income/figures/missingness_mechanism_classification.png",
+    "agent_visual_correction_fig": "outputs/adult_census_income/figures/agent_visual_correction_example.png",
+    "mlp_training_curve_fig": "outputs/adult_census_income/figures/module2/mlp_training_curve.png",
+    "repeated_cv_stability_fig": "outputs/adult_census_income/figures/module2/repeated_cv_stability.png"
+  },
+  "packaging_artifacts": {
+    "report_md": "outputs/adult_census_income/report_final_iteration4.md",
+    "report_docx": "outputs/adult_census_income/report_final_iteration4.docx",
+    "report_pdf": "outputs/adult_census_income/report_final_iteration4.pdf",
+    "submission_manifest": "outputs/adult_census_income/submission_manifest.md",
+    "pre_submission_checklist": "outputs/adult_census_income/pre_submission_checklist_iteration5.md",
+    "agent_log": "outputs/adult_census_income/agent_log.md"
+  },
+  "narrative_links": {
+    "report": "outputs/adult_census_income/report_final_iteration4.md",
+    "section_6_4_narrative": "notebooks/adult_census_income_final.ipynb#section-6.4",
+    "coursework_section_alignment": "outputs/adult_census_income/coursework_section_alignment.md"
+  },
+  "generated_at_note": "Generated by notebook Section 6.2 as canonical final-solution technical bundle."
+}

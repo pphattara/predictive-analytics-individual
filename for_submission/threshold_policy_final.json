@@ -1,0 +1,16 @@
+{
+  "module": "iteration_1_module_2",
+  "dataset": "adult_census_income",
+  "selected_source": "candidate",
+  "selected_model_family": "tree_hgb_tuned",
+  "selected_variant": "reference",
+  "selected_scaler": "robust",
+  "dropped_columns": [],
+  "cv_mean_f1_weighted": 0.8694631650740684,
+  "cv_std_f1_weighted": 0.002672679539190368,
+  "threshold": 0.36000000000000004,
+  "validation_f1_weighted_at_threshold": 0.8576448188988381,
+  "validation_recall_positive_at_threshold": 0.7568027210884354,
+  "validation_precision_positive_at_threshold": 0.6783536585365854,
+  "rationale": "Selected highest weighted F1 among thresholds meeting recall_positive >= 0.75."
+}

@@ -1,0 +1,32 @@
+{
+  "module": "iteration_1_module_1",
+  "dataset": "adult_census_income",
+  "target": "income",
+  "no_nan_train": true,
+  "no_nan_val": true,
+  "no_nan_test": true,
+  "feature_count_train": 104,
+  "feature_count_val": 104,
+  "feature_count_test": 104,
+  "split_sizes": {
+    "train": 22792,
+    "val": 4884,
+    "test": 4885
+  },
+  "class_balance_by_split": {
+    "train": {
+      "<=50K": 17303,
+      ">50K": 5489
+    },
+    "val": {
+      "<=50K": 3708,
+      ">50K": 1176
+    },
+    "test": {
+      "<=50K": 3709,
+      ">50K": 1176
+    }
+  },
+  "leakage_checks_passed": true,
+  "notes": "Split-first strategy and training-only fit confirmed."
+}
