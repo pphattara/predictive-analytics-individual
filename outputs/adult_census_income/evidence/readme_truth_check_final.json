@@ -50,21 +50,6 @@
       "non_empty": true
     },
     {
-      "path": "outputs/adult_census_income/archive/report_exports/report_supporting_export.md",
-      "exists": true,
-      "non_empty": true
-    },
-    {
-      "path": "outputs/adult_census_income/archive/report_exports/report_supporting_export.docx",
-      "exists": true,
-      "non_empty": true
-    },
-    {
-      "path": "outputs/adult_census_income/archive/report_exports/report_supporting_export.pdf",
-      "exists": true,
-      "non_empty": true
-    },
-    {
       "path": "outputs/adult_census_income/metrics/model_comparison_cv.csv",
       "exists": true,
       "non_empty": true

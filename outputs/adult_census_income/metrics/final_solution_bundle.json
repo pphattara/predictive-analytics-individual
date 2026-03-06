@@ -68,16 +68,12 @@
   },
   "packaging_artifacts": {
     "report_pdf": "report_final.pdf",
-    "supporting_report_md": "outputs/adult_census_income/archive/report_exports/report_supporting_export.md",
-    "supporting_report_docx": "outputs/adult_census_income/archive/report_exports/report_supporting_export.docx",
-    "supporting_report_pdf": "outputs/adult_census_income/archive/report_exports/report_supporting_export.pdf",
     "submission_manifest": "submission_manifest.md",
     "final_checklist": "FINAL_CHECK.md",
     "agent_log": "outputs/adult_census_income/agent_log.md"
   },
   "narrative_links": {
     "report": "report_final.pdf",
-    "supporting_report_markdown": "outputs/adult_census_income/archive/report_exports/report_supporting_export.md",
     "section_6_4_narrative": "notebooks/adult_census_income_final.ipynb#section-6.4",
     "readme": "README.md"
   },

@@ -56,7 +56,6 @@ import subprocess
 root = Path('.').resolve()
 out = root / 'outputs' / 'adult_census_income'
 metrics = out / 'metrics'
-archive = out / 'archive' / 'report_exports'
 
 tracked_files = subprocess.run(
     ['git', 'ls-files', '-z'],
@@ -69,9 +68,6 @@ tracked_dsstore = [path.decode('utf-8') for path in tracked_files if path and pa
 
 required = [
     root / 'report_final.pdf',
-    archive / 'report_supporting_export.md',
-    archive / 'report_supporting_export.pdf',
-    archive / 'report_supporting_export.docx',
     metrics / 'evaluation_report.json',
     metrics / 'final_solution_bundle.json',
     metrics / 'repeated_cv_stability.csv',
@@ -121,12 +117,6 @@ timeline_keys = set(bundle.get('project_history_summary', {}).keys())
 expected_timeline = {'foundation_build', 'six_step_restructure', 'quality_uplift', 'report_polish', 'final_submission'}
 if timeline_keys != expected_timeline:
     raise SystemExit(f'final_solution_bundle.json timeline mismatch: got {sorted(timeline_keys)}')
-
-report_md_text = (archive / 'report_supporting_export.md').read_text(encoding='utf-8')
-if '## 6. References' not in report_md_text:
-    raise SystemExit('Archived report markdown missing references section')
-if not re.search(r'Figure\s+\d+', report_md_text):
-    raise SystemExit('Archived report markdown has no numbered figure references')
 
 if tracked_dsstore:
     raise SystemExit(f'Found tracked .DS_Store files in repository: {tracked_dsstore}')

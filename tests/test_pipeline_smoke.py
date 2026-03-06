@@ -12,7 +12,6 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "outputs" / "adult_census_income"
 METRICS = OUT / "metrics"
 FIGS = OUT / "figures"
-ARCHIVE = OUT / "archive" / "report_exports"
 
 
 def tracked_dsstore_paths(root: Path) -> list[str]:
@@ -34,9 +33,6 @@ class TestPipelineSmoke(unittest.TestCase):
     def test_required_artifacts_exist(self) -> None:
         required_paths = [
             ROOT / "report_final.pdf",
-            ARCHIVE / "report_supporting_export.md",
-            ARCHIVE / "report_supporting_export.pdf",
-            ARCHIVE / "report_supporting_export.docx",
             METRICS / "evaluation_report.json",
             METRICS / "model_comparison_cv.csv",
             METRICS / "ablation_results.csv",
