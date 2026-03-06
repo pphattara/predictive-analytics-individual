@@ -1,15 +1,15 @@
 # FINAL_CHECK — Submission Checklist Completion
 
 Date verified: 2026-03-06
-Scope: `assignment_final/`
+Scope: repository root final package
 
 ## A. Must-fix before submission
 
 ### 1) Single canonical final package
-- [x] One final report filename only: `outputs/adult_census_income/report_final_iteration4.pdf` (with matching `.md` and `.docx` source/export)
+- [x] One final report filename only: `report_final.pdf` (supporting source/export files remain under `outputs/adult_census_income/`)
 - [x] One canonical notebook only: `notebooks/adult_census_income_final.ipynb`
 - [x] One final outputs folder only: `outputs/adult_census_income/`
-- [x] Stale duplicate versions archived to `archive/`
+- [x] Stale duplicate versions removed from canonical submission paths
 - [x] README points to canonical names
 - [x] Report/notebook/outputs/manifest naming aligned
 
@@ -93,7 +93,7 @@ Scope: `assignment_final/`
 - [x] Date of final verification included
 
 ### 10) Final PDF export quality check
-- [x] PDF exists: `outputs/adult_census_income/report_final_iteration4.pdf`
+- [x] PDF exists: `report_final.pdf`
 - [x] PDF regenerated from canonical markdown export pipeline
 - [x] Filename matches README and manifest naming
 - [x] Export log saved: `outputs/adult_census_income/evidence/report_export_log_final.txt`
@@ -116,7 +116,7 @@ Scope: `assignment_final/`
 
 ## Submission-ready signoff
 - [x] Final report PDF exists
-- [ ] Final repo link works (no git remote configured in local workspace)
+- [x] Final repo link works (`https://github.com/pphattara/predictive-analytics-individual`)
 - [x] Canonical notebook runs
 - [x] Tests pass
 - [x] Submission checks pass

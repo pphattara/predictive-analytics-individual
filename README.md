@@ -91,7 +91,7 @@ Core outputs:
 - `outputs/adult_census_income/metrics/threshold_policy.json`
 - `outputs/adult_census_income/metrics/final_solution_bundle.json`
 - `outputs/adult_census_income/models/best_model_module2.pkl`
-- `outputs/adult_census_income/report_final_iteration4.pdf`
+- `report_final.pdf` (canonical submission report at repo root)
 
 Agent evidence outputs:
 

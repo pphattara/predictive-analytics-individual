@@ -23,7 +23,7 @@ python3 -u -m unittest tests/test_preprocessing.py tests/test_models.py tests/te
 - `outputs/adult_census_income/metrics/final_solution_bundle.json`
 - `outputs/adult_census_income/metrics/model_comparison_cv.csv`
 - `outputs/adult_census_income/metrics/ablation_results.csv`
-- `outputs/adult_census_income/report_final_iteration4.pdf`
+- `report_final.pdf`
 - `outputs/adult_census_income/models/best_model_module2.pkl`
 
 ## Agent Evidence
