@@ -42,7 +42,16 @@ project-root/
 │   └── adult_census_income_final.ipynb
 ├── data/
 │   └── raw/adult_census_income/adult.csv
+├── src/
+│   ├── preprocessing.py
+│   ├── models.py
+│   ├── evaluation.py
+│   └── features.py
 ├── tests/
+│   ├── test_preprocessing.py
+│   ├── test_models.py
+│   ├── test_evaluation.py
+│   └── test_pipeline_smoke.py
 ├── scripts/
 │   └── run_submission_checks.sh
 └── outputs/
@@ -73,6 +82,8 @@ python3 -u -m unittest tests/test_preprocessing.py tests/test_models.py tests/te
 ```
 
 ## Tests and Validation Meaning
+
+The repo includes lightweight `src/` support modules so cloned test runs do not fail on missing imports.
 
 - `tests/test_preprocessing.py`: preprocessing validation contract from saved metrics.
 - `tests/test_models.py`: model-comparison, ablation, and threshold-policy artefact checks.
