@@ -28,7 +28,7 @@ jupyter nbconvert --to notebook --execute notebooks/adult_census_income_final.ip
 | 4. Explore models and shortlist | Notebook `## 4`, `metrics/model_comparison_cv.csv`, `metrics/ablation_results.csv` |
 | 5. Fine-tune and evaluate | Notebook `## 5`, `metrics/evaluation_report.json`, `metrics/threshold_policy.json`, calibration/ROC/PR/confusion figures |
 | 6. Present final solution | Notebook `## 6`, `metrics/final_solution_bundle.json`, model card in report |
-| Agent usage + decision register | `outputs/adult_census_income/agent_log.md`, `outputs/adult_census_income/decision_register.pdf`, `outputs/adult_census_income/interaction_log_images/` |
+| Agent usage + decision register | `outputs/adult_census_income/agent_log.md`, `outputs/adult_census_income/decision_register.pdf`, `outputs/adult_census_income/evidence/` |
 
 ## Repository Structure
 
@@ -97,7 +97,6 @@ Agent evidence outputs:
 
 - `outputs/adult_census_income/agent_log.md`
 - `outputs/adult_census_income/decision_register.pdf`
-- `outputs/adult_census_income/interaction_log_images/`
 - `outputs/adult_census_income/evidence/`
 
 Supporting report exports are archived under `outputs/adult_census_income/archive/report_exports/` and are not submission files.

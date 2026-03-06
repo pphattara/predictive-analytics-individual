@@ -145,16 +145,6 @@
       "non_empty": true
     },
     {
-      "path": "outputs/adult_census_income/agent_chat_screenshot.docx",
-      "exists": true,
-      "non_empty": true
-    },
-    {
-      "path": "outputs/adult_census_income/interaction_log_images",
-      "exists": true,
-      "non_empty": true
-    },
-    {
       "path": "outputs/adult_census_income/evidence/agent_log_summary_final.pdf",
       "exists": true,
       "non_empty": true

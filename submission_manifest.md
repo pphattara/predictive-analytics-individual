@@ -30,7 +30,6 @@ python3 -u -m unittest tests/test_preprocessing.py tests/test_models.py tests/te
 
 - `outputs/adult_census_income/agent_log.md`
 - `outputs/adult_census_income/decision_register.pdf`
-- `outputs/adult_census_income/interaction_log_images/`
 - `outputs/adult_census_income/evidence/`
 
 ## Verification Logs

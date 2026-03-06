@@ -37,7 +37,6 @@
   "workflow_evidence_links": {
     "agent_log": "outputs/adult_census_income/agent_log.md",
     "decision_register": "outputs/adult_census_income/decision_register.pdf",
-    "agent_interactions_dir": "outputs/adult_census_income/interaction_log_images/",
     "evidence_dir": "outputs/adult_census_income/evidence/",
     "problem_statement": "outputs/adult_census_income/problem_statement.md"
   },
